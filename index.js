@@ -1,11 +1,15 @@
 const express = require('express');
 
 const app = express();
+app.use(express.json());
+// const bodyParser = require('body-parser');
+const employeeRouter = require('./router/employeeRouter');
 
-app.listen(3000, () => console.log('ouvindo porta 3000!'));
+// app.use(bodyParser.json());
+
+ const PORT = 3000;
+app.listen(PORT, () => console.log('ouvindo porta 3000!'));
 
 
 
-app.get('/', (req, res) => {
-  res.send();
-});
+app.use('/employee', employeeRouter);

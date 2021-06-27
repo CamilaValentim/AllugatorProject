@@ -1,5 +1,5 @@
 const defineEmployeeModel = (sequelize, DataTypes) => {
-    const Employee = sequelize.define('employee', {
+    const employee = sequelize.define('employee', {
         cpf: { primaryKey: true, type: DataTypes.STRING},
         name: DataTypes.STRING,
         office: DataTypes.STRING,
@@ -9,7 +9,9 @@ const defineEmployeeModel = (sequelize, DataTypes) => {
         status:DataTypes.STRING,
 
     }, { timestamps: false });
-    return Employee;
+    return employee;
 };
 
 module.exports = defineEmployeeModel;
+
+
